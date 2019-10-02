@@ -2423,7 +2423,9 @@ var render = function() {
                     _c("img", {
                       attrs: {
                         src:
-                          "https://versions.bulma.io/0.7.1/images/placeholders/1280x960.png",
+                          "https://stage.whgstage.com/content/images/games/" +
+                          game.launchcode +
+                          ".jpg",
                         alt: "Placeholder image"
                       },
                       on: {

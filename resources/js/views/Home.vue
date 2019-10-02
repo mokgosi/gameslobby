@@ -6,7 +6,7 @@
                     <div class="card-image">
                         <figure class="image is-4by3">
                             <img @click="show(game.launchcode)"
-                                 src="https://versions.bulma.io/0.7.1/images/placeholders/1280x960.png"
+                                 :src="'https://stage.whgstage.com/content/images/games/'+ game.launchcode +'.jpg'"
                                  alt="Placeholder image">
                         </figure>
                     </div>
