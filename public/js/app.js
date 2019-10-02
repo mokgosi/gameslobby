@@ -1876,6 +1876,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Home",
   data: function data() {
@@ -1896,7 +1898,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     show: function show(message) {
-      alert(message);
+      alert('Launch code:' + message);
     }
   }
 });
@@ -2416,7 +2418,22 @@ var render = function() {
         return game.game_brand_block == null
           ? _c("div", { staticClass: "column is-one-third" }, [
               _c("div", { staticClass: "card" }, [
-                _vm._m(0, true),
+                _c("div", { staticClass: "card-image" }, [
+                  _c("figure", { staticClass: "image is-4by3" }, [
+                    _c("img", {
+                      attrs: {
+                        src:
+                          "https://versions.bulma.io/0.7.1/images/placeholders/1280x960.png",
+                        alt: "Placeholder image"
+                      },
+                      on: {
+                        click: function($event) {
+                          return _vm.show(game.launchcode)
+                        }
+                      }
+                    })
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-content" }, [
                   _c("div", { staticClass: "media" }, [
@@ -2477,24 +2494,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-image" }, [
-      _c("figure", { staticClass: "image is-4by3" }, [
-        _c("img", {
-          attrs: {
-            src:
-              "https://versions.bulma.io/0.7.1/images/placeholders/1280x960.png",
-            alt: "Placeholder image"
-          }
-        })
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
