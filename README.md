@@ -11,6 +11,7 @@ Based on:
 * Laravel ^6.0
 * phpunit 7.5.9
 * mysql/mariadb 10.1.38-MariaDB
+* Vue 2.5.*
 
 
 ### Clone the repository:
