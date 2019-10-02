@@ -2415,7 +2415,24 @@ var render = function() {
       _vm._l(_vm.games, function(game) {
         return _c("div", { staticClass: "column is-one-third" }, [
           _c("div", { staticClass: "card" }, [
-            _vm._m(0, true),
+            _c("div", { staticClass: "card-image" }, [
+              _c("figure", { staticClass: "image is-4by3" }, [
+                _c("img", {
+                  attrs: {
+                    src:
+                      "https://stage.whgstage.com/content/images/games/" +
+                      game.launchcode +
+                      ".jpg",
+                    alt: "Placeholder image"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.show(game.launchcode)
+                    }
+                  }
+                })
+              ])
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-content" }, [
               _c("div", { staticClass: "media" }, [
@@ -2475,24 +2492,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-image" }, [
-      _c("figure", { staticClass: "image is-4by3" }, [
-        _c("img", {
-          attrs: {
-            src:
-              "https://versions.bulma.io/0.7.1/images/placeholders/1280x960.png",
-            alt: "Placeholder image"
-          }
-        })
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
