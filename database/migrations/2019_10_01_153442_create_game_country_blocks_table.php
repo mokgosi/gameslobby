@@ -15,7 +15,7 @@ class CreateGameCountryBLocksTable extends Migration
     {
         Schema::create('game_country_block', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('lauchcode');
+            $table->string('launchcode');
             $table->integer('brandid');
             $table->string('country');
             $table->timestamps();

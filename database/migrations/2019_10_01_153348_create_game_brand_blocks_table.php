@@ -15,7 +15,7 @@ class CreateGameBrandBLocksTable extends Migration
     {
         Schema::create('game_brand_block', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('lauchcode');
+            $table->string('launchcode');
             $table->integer('brandid');
             $table->timestamps();
         });
