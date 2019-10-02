@@ -29,8 +29,6 @@ $ npm install
 
 ```
 
-```
-
 **Create .env and app key**
 
 ```
