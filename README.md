@@ -29,13 +29,6 @@ $ npm install
 
 ```
 
-### Create Database
-
-```
-
-mysql -u root -p<password>
-CREATE DATABASE dbname;
-
 ```
 
 **Create .env and app key**
@@ -60,15 +53,6 @@ DB_PASSWORD=password
 
 ```
 
-**Run migrations and seeds**
-
-```
-
-$ php artisan migrate
-$ php artisan db:seed
-
-```
-
 **Run tests**
 ```
 
@@ -86,24 +70,4 @@ $ php artisan serve
 
 Browse to http://localhost:8000
 
-
-**Test Login details**
-
-* username: admin@admin.com
-* password: secret
-
-* username: user@admin.com
-* password: secret
-
-
-# API resources
-
-**Get Users**
-
-http://localhost:8000/api/v1/users
-
-
-**Get Posts**
-
-http://localhost:8000/api/v1/posts
 
