@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class GameBrandBLock extends Model
 {
-    protected $table = 'game_brand_blocks';
+    protected $table = 'game_brand_block';
 
     protected $fillable = ['launchcode', 'brandid'];
 

@@ -1,11 +1,11 @@
 <template>
     <div class="container">
         <div class="columns  is-multiline is-mobile">
-            <div class="column is-one-third" v-for="game in games">
+            <div class="column is-one-third"  v-for="game in games" v-if="game.game_brand_block == null">
                 <div class="card">
                     <div class="card-image">
                         <figure class="image is-4by3">
-                            <img @click="show(game.launchcode)" :src="'https://stage.whgstage.com/content/images/games/'+ game.launchcode +'.jpg'" alt="Placeholder image">
+                            <img src="https://versions.bulma.io/0.7.1/images/placeholders/1280x960.png" alt="Placeholder image">
                         </figure>
                     </div>
                     <div class="card-content">
@@ -35,7 +35,7 @@
         </div>
     </div>
 </template>
-
+<!--:src="'https://stage.whgstage.com/content/images/games/'+ game.launchcode +'.jpg'"-->
 <script>
     export default {
         name: "Home",

@@ -2413,86 +2413,88 @@ var render = function() {
       "div",
       { staticClass: "columns  is-multiline is-mobile" },
       _vm._l(_vm.games, function(game) {
-        return _c("div", { staticClass: "column is-one-third" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-image" }, [
-              _c("figure", { staticClass: "image is-4by3" }, [
-                _c("img", {
-                  attrs: {
-                    src:
-                      "https://stage.whgstage.com/content/images/games/" +
-                      game.launchcode +
-                      ".jpg",
-                    alt: "Placeholder image"
-                  },
-                  on: {
-                    click: function($event) {
-                      return _vm.show(game.launchcode)
-                    }
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-content" }, [
-              _c("div", { staticClass: "media" }, [
-                _c("div", { staticClass: "media-content" }, [
-                  _c(
-                    "p",
-                    {
-                      staticClass: "title is-4",
-                      on: {
-                        click: function($event) {
-                          return _vm.show(game.launchcode)
-                        }
-                      }
-                    },
-                    [_vm._v(_vm._s(game.name))]
-                  )
+        return game.game_brand_block == null
+          ? _c("div", { staticClass: "column is-one-third" }, [
+              _c("div", { staticClass: "card" }, [
+                _vm._m(0, true),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-content" }, [
+                  _c("div", { staticClass: "media" }, [
+                    _c("div", { staticClass: "media-content" }, [
+                      _c(
+                        "p",
+                        {
+                          staticClass: "title is-4",
+                          on: {
+                            click: function($event) {
+                              return _vm.show(game.launchcode)
+                            }
+                          }
+                        },
+                        [_vm._v(_vm._s(game.name))]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "content" }, [
+                    _vm._v(
+                      "\n\n                        Game Provider: " +
+                        _vm._s(game.game_provider.name) +
+                        "\n                        "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "\n                        RTF: " +
+                        _vm._s(game.rtp) +
+                        "\n                        "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "\n                        Category: " +
+                        _vm._s(game.brand.category) +
+                        "\n                        "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "\n                        New: " +
+                        _vm._s(game.brand.new) +
+                        "\n                        "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "\n                        Hot: " +
+                        _vm._s(game.brand.hot) +
+                        "\n                        "
+                    ),
+                    _c("br")
+                  ])
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "content" }, [
-                _vm._v(
-                  "\n\n                        Game Provider: " +
-                    _vm._s(game.game_provider.name) +
-                    "\n                        "
-                ),
-                _c("br"),
-                _vm._v(
-                  "\n                        RTF: " +
-                    _vm._s(game.rtp) +
-                    "\n                        "
-                ),
-                _c("br"),
-                _vm._v(
-                  "\n                        Category: " +
-                    _vm._s(game.brand.category) +
-                    "\n                        "
-                ),
-                _c("br"),
-                _vm._v(
-                  "\n                        New: " +
-                    _vm._s(game.brand.new) +
-                    "\n                        "
-                ),
-                _c("br"),
-                _vm._v(
-                  "\n                        Hot: " +
-                    _vm._s(game.brand.hot) +
-                    "\n                        "
-                ),
-                _c("br")
               ])
             ])
-          ])
-        ])
+          : _vm._e()
       }),
       0
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-image" }, [
+      _c("figure", { staticClass: "image is-4by3" }, [
+        _c("img", {
+          attrs: {
+            src:
+              "https://versions.bulma.io/0.7.1/images/placeholders/1280x960.png",
+            alt: "Placeholder image"
+          }
+        })
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
