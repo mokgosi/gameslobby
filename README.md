@@ -51,13 +51,6 @@ DB_PASSWORD=password
 
 ```
 
-**Run tests**
-```
-
-$ vendor\bin\phpunit
-
-```
-
 **Start your local server**
 ```
 
