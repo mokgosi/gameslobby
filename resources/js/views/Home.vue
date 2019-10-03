@@ -1,12 +1,12 @@
 <template>
     <div class="container">
         <div class="columns  is-multiline is-mobile">
-            <div class="column is-one-third"  v-for="game in games" v-if="game.game_brand_block == null">
+            <div class="column is-one-third"  v-for="game in games">
                 <div class="card">
                     <div class="card-image">
                         <figure class="image is-4by3">
                             <img @click="show(game.launchcode)"
-                                 :src="'https://stage.whgstage.com/content/images/games/'+ game.launchcode +'.jpg'"
+                                 :src="'https://stage.whgstage.com/scontent/images/games/'+ game.launchcode +'.jpg'"
                                  alt="Placeholder image">
                         </figure>
                     </div>
@@ -19,16 +19,17 @@
 
                         <div class="content">
 
-                            Game Provider: {{ game.game_provider.name }}
+                            Game Provider: {{ game.game_provider }}
                             <br>
                             RTF: {{ game.rtp }}
                             <br>
-                            Category: {{ game.brand.category }}
+                            Category: {{ game.category }}
                             <br>
-                            New: {{ game.brand.new }}
+                            New: {{ game.new }}
                             <br>
-                            Hot: {{ game.brand.hot }}
+                            Hot: {{ game.hot }}
                             <br>
+                            <a  @click="show(game.launchcode)">Show Launch Code:</a>
                         </div>
                     </div>
                 </div>
@@ -44,6 +45,7 @@
         data() {
             return {
                 games: [],
+                isOpen: false
             }
         },
 
@@ -52,13 +54,16 @@
         },
 
         created() {
-            axios.get('/api/v1/games')
+            axios.get('/api/v1/game')
                 .then(({data}) => this.games = data);
         },
 
         methods: {
             show: function (message) {
                 alert('Launch code:'+message);
+            },
+            toggle: function(){
+                this.isOpen = !this.isOpen
             }
         }
     }

@@ -1878,11 +1878,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Home",
   data: function data() {
     return {
-      games: []
+      games: [],
+      isOpen: false
     };
   },
   mounted: function mounted() {
@@ -1891,7 +1893,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get('/api/v1/games').then(function (_ref) {
+    axios.get('/api/v1/game').then(function (_ref) {
       var data = _ref.data;
       return _this.games = data;
     });
@@ -1899,6 +1901,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     show: function show(message) {
       alert('Launch code:' + message);
+    },
+    toggle: function toggle() {
+      this.isOpen = !this.isOpen;
     }
   }
 });
@@ -2415,82 +2420,92 @@ var render = function() {
       "div",
       { staticClass: "columns  is-multiline is-mobile" },
       _vm._l(_vm.games, function(game) {
-        return game.game_brand_block == null
-          ? _c("div", { staticClass: "column is-one-third" }, [
-              _c("div", { staticClass: "card" }, [
-                _c("div", { staticClass: "card-image" }, [
-                  _c("figure", { staticClass: "image is-4by3" }, [
-                    _c("img", {
-                      attrs: {
-                        src:
-                          "https://stage.whgstage.com/content/images/games/" +
-                          game.launchcode +
-                          ".jpg",
-                        alt: "Placeholder image"
-                      },
+        return _c("div", { staticClass: "column is-one-third" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-image" }, [
+              _c("figure", { staticClass: "image is-4by3" }, [
+                _c("img", {
+                  attrs: {
+                    src:
+                      "https://stage.whgstage.com/scontent/images/games/" +
+                      game.launchcode +
+                      ".jpg",
+                    alt: "Placeholder image"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.show(game.launchcode)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-content" }, [
+              _c("div", { staticClass: "media" }, [
+                _c("div", { staticClass: "media-content" }, [
+                  _c(
+                    "p",
+                    {
+                      staticClass: "title is-4",
                       on: {
                         click: function($event) {
                           return _vm.show(game.launchcode)
                         }
                       }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-content" }, [
-                  _c("div", { staticClass: "media" }, [
-                    _c("div", { staticClass: "media-content" }, [
-                      _c(
-                        "p",
-                        {
-                          staticClass: "title is-4",
-                          on: {
-                            click: function($event) {
-                              return _vm.show(game.launchcode)
-                            }
-                          }
-                        },
-                        [_vm._v(_vm._s(game.name))]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "content" }, [
-                    _vm._v(
-                      "\n\n                        Game Provider: " +
-                        _vm._s(game.game_provider.name) +
-                        "\n                        "
-                    ),
-                    _c("br"),
-                    _vm._v(
-                      "\n                        RTF: " +
-                        _vm._s(game.rtp) +
-                        "\n                        "
-                    ),
-                    _c("br"),
-                    _vm._v(
-                      "\n                        Category: " +
-                        _vm._s(game.brand.category) +
-                        "\n                        "
-                    ),
-                    _c("br"),
-                    _vm._v(
-                      "\n                        New: " +
-                        _vm._s(game.brand.new) +
-                        "\n                        "
-                    ),
-                    _c("br"),
-                    _vm._v(
-                      "\n                        Hot: " +
-                        _vm._s(game.brand.hot) +
-                        "\n                        "
-                    ),
-                    _c("br")
-                  ])
+                    },
+                    [_vm._v(_vm._s(game.name))]
+                  )
                 ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "content" }, [
+                _vm._v(
+                  "\n\n                        Game Provider: " +
+                    _vm._s(game.game_provider) +
+                    "\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "\n                        RTF: " +
+                    _vm._s(game.rtp) +
+                    "\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "\n                        Category: " +
+                    _vm._s(game.category) +
+                    "\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "\n                        New: " +
+                    _vm._s(game.new) +
+                    "\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "\n                        Hot: " +
+                    _vm._s(game.hot) +
+                    "\n                        "
+                ),
+                _c("br"),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.show(game.launchcode)
+                      }
+                    }
+                  },
+                  [_vm._v("Show Launch Code:")]
+                )
               ])
             ])
-          : _vm._e()
+          ])
+        ])
       }),
       0
     )
@@ -17511,9 +17526,7 @@ module.exports = g;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
-/* harmony import */ var _views_Home_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/Home.vue */ "./resources/js/views/Home.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
 
 
 Vue.component('Home', __webpack_require__(/*! ./views/Home.vue */ "./resources/js/views/Home.vue")["default"]);

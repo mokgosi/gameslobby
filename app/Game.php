@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Game extends Model
 {
+    protected $table = 'game';
+
     /**
      * @var array
      */
@@ -29,5 +31,10 @@ class Game extends Model
     public function gameBrandBlock()
     {
         return $this->belongsTo(GameBrandBLock::class, 'launchcode', 'launchcode');
+    }
+
+    public function gameCountryBlock()
+    {
+        return $this->belongsTo(GameCountryBLock::class, 'launchcode', 'launchcode');
     }
 }
